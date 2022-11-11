@@ -2,11 +2,12 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import 'dotenv/config';
 import { Logger } from '@nestjs/common';
+require('dotenv').config();
 
-const port = process.env.PORT || 3000;
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  const port = process.env.PORT;
   await app.listen(port);
-  Logger.log(`App is running on port http://127.0.0.1:${port}`);
+  Logger.log(`Server is running on port http://127.0.0.1:${port}`);
 }
 bootstrap();
