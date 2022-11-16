@@ -10,8 +10,3 @@ export class AppController {
     return this.appService.getConfig();
   }
 }
-
-@Controller('me')
-export class Mine {
-  constructor(private readonly appService: AppService) {}
-}
